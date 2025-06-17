@@ -50,7 +50,7 @@ ENV DAPPER_ENV REPO TAG DRONE_TAG DRONE_BRANCH CROSS RKE2_IMAGE_REPO USE_LOCAL_I
 ENV DAPPER_SOURCE /go/src/github.com/harvester/harvester-installer/
 ENV DAPPER_OUTPUT ./bin ./dist
 ENV DAPPER_DOCKER_SOCKET true
-ENV DAPPER_RUN_ARGS "-v /run/containerd/containerd.sock:/run/containerd/containerd.sock -v harvester-installer-go:/root/go -v harvester-installer-cache:/root/.cache ${HARVESTER_SRC_MOUNT} ${ADDONS_SRC_MOUNT} --privileged"
+ENV DAPPER_RUN_ARGS "-v /run/containerd/containerd.sock:/run/containerd/containerd.sock -v harvester-installer-go:/root/go -v harvester-installer-cache:/root/.cache -v /home/ubuntu/hvt:/bundle ${HARVESTER_SRC_MOUNT} ${ADDONS_SRC_MOUNT} --privileged"
 
 ENV HOME ${DAPPER_SOURCE}
 WORKDIR ${DAPPER_SOURCE}
